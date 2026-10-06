@@ -6,7 +6,7 @@ This is an open-source public repository for Mr. Fabula's IB HL Chemistry 12 cla
 ## 🗂️ Repository Structure
 
 ```
-HLChem-Data-Pooling/
+Chemistry Data Pooling/
 ├── HLChem_11/
     ├── Data Pooling/     # Data Pooling assignment raw data & analysis
     ├── Iron Contents/    # Iron concentration analysis data
