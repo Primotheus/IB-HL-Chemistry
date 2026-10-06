@@ -1,27 +1,28 @@
-# IB HL Chemistry 11 
+# IB HL Chemistry 12 
 
-This is an open-source public repository for Mr. Fabula's IB HL Chemistry 11 class. Past assignments and data pools are included here.
+This is an open-source public repository for Mr. Fabula's IB HL Chemistry 12 class. Past assignments and data pools are included here.
 
 
 ## 🗂️ Repository Structure
 
 ```
 HLChem-Data-Pooling/
-├── Data Pooling/     # Data Pooling assignment raw data & analysis
-├── Iron Contents/    # Iron concentration analysis data
-├── iron_plots/       # Iron concentration lab graphs
-├── plots/           # Data Pooling assignment graphs
-├── imf_temp/        # IMF Presentation
-├── lauric_acid/     # Lauric acid
-├── yahusimulation/  # Entropy analogy (big yahu calling)
-└── bleach_decomposition/ # Bleach Decomposition 
+├── HLChem_11/
+    ├── Data Pooling/     # Data Pooling assignment raw data & analysis
+    ├── Iron Contents/    # Iron concentration analysis data
+    ├── iron_plots/       # Iron concentration lab graphs
+    ├── plots/            # Data Pooling assignment graphs
+    ├── imf_temp/         # IMF Presentation
+    ├── lauric_acid/      # Lauric acid
+    ├── yahusimulation/   # Entropy analogy (big yahu calling)
+    └── bleach_decomposition/ # Bleach Decomposition 
+└── HLChem_12/
+    ├── macro-level_analogy/ # 
+    ├── iodine_clock/     # Iodine Clock Lab
+    └── extras/           # any extra materials
 ```
-
-## Yahu Simulation
-Go to this website to check out the simulation I made! (with the help of Gemini and Claude)
-
 
 ---
 
-**Course:** IB HL Chemistry 11  
-**Year:** 2025-2026
+**Course:** IB HL Chemistry 12  
+**Year:** 2026-2027
