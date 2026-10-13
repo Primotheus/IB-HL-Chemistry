@@ -1,0 +1,59 @@
+group,part,x,time_s,rate_per_s
+Andison & Khoa,II_temperature,8.0,21.0,0.047619047619047616
+Andison & Khoa,II_temperature,22.0,20.0,0.05
+Andison & Khoa,II_temperature,30.0,27.0,0.037037037037037035
+Angus & Darren,II_temperature,10.0,15.92,0.06281407035175879
+Angus & Darren,II_temperature,15.0,30.66,0.03261578604044357
+Angus & Darren,II_temperature,22.5,27.77,0.036010082823190494
+Angus & Darren,II_temperature,38.0,67.61,0.014790711433219937
+Howard & Grace,II_temperature,7.0,24.21,0.041305245766212306
+Howard & Grace,II_temperature,22.0,28.0,0.03571428571428571
+Howard & Grace,II_temperature,35.0,29.5,0.03389830508474576
+Howard & Grace,II_temperature,45.0,33.45,0.029895366218236172
+Kevin J & Amy,II_temperature,11.0,41.42,0.024142926122646062
+Kevin J & Amy,II_temperature,15.0,35.58,0.028105677346824058
+Kevin J & Amy,II_temperature,21.0,23.67,0.042247570764681025
+Leo & Kevin L,II_temperature,10.0,60.0,0.016666666666666666
+Leo & Kevin L,II_temperature,24.0,37.0,0.02702702702702703
+Lucas & Ana,II_temperature,13.0,12.0,0.08333333333333333
+Lucas & Ana,II_temperature,20.0,34.0,0.029411764705882353
+Lucas & Ana,II_temperature,24.5,23.0,0.043478260869565216
+Lucas & Ana,II_temperature,36.5,598.0,0.0016722408026755853
+Sophia & Ryan,II_temperature,9.0,32.5,0.03076923076923077
+Sophia & Ryan,II_temperature,23.0,39.5,0.02531645569620253
+Andison & Khoa,I_concentration,0.004,90.0,0.011111111111111112
+Andison & Khoa,I_concentration,0.008,45.0,0.022222222222222223
+Andison & Khoa,I_concentration,0.012,30.0,0.03333333333333333
+Andison & Khoa,I_concentration,0.016,24.0,0.041666666666666664
+Andison & Khoa,I_concentration,0.02,20.0,0.05
+Angus & Darren,I_concentration,0.008,51.44,0.019440124416796267
+Angus & Darren,I_concentration,0.012,39.16,0.02553626149131767
+Angus & Darren,I_concentration,0.016,31.34,0.03190810465858328
+Angus & Darren,I_concentration,0.018,30.07,0.03325573661456601
+Angus & Darren,I_concentration,0.02,27.77,0.036010082823190494
+Howard & Grace,I_concentration,0.004,102.21,0.009783778495254868
+Howard & Grace,I_concentration,0.008,50.23,0.019908421262193908
+Howard & Grace,I_concentration,0.012,37.2,0.026881720430107524
+Howard & Grace,I_concentration,0.016,35.11,0.028481913984619765
+Howard & Grace,I_concentration,0.02,28.0,0.03571428571428571
+Kevin J & Amy,I_concentration,0.004,80.0,0.0125
+Kevin J & Amy,I_concentration,0.008,40.0,0.025
+Kevin J & Amy,I_concentration,0.012,26.0,0.038461538461538464
+Kevin J & Amy,I_concentration,0.016,20.0,0.05
+Kevin J & Amy,I_concentration,0.02,18.0,0.05555555555555555
+Leo & Kevin L,I_concentration,0.004,94.47,0.010585371017254154
+Leo & Kevin L,I_concentration,0.008,53.0,0.018867924528301886
+Leo & Kevin L,I_concentration,0.01,37.0,0.02702702702702703
+Leo & Kevin L,I_concentration,0.012,25.0,0.04
+Leo & Kevin L,I_concentration,0.016,25.0,0.04
+Leo & Kevin L,I_concentration,0.02,15.0,0.06666666666666667
+Lucas & Ana,I_concentration,0.012,61.0,0.01639344262295082
+Lucas & Ana,I_concentration,0.014,53.0,0.018867924528301886
+Lucas & Ana,I_concentration,0.016,45.0,0.022222222222222223
+Lucas & Ana,I_concentration,0.018,28.0,0.03571428571428571
+Lucas & Ana,I_concentration,0.02,23.0,0.043478260869565216
+Sophia & Ryan,I_concentration,0.004,136.55,0.0073233247894544115
+Sophia & Ryan,I_concentration,0.008,63.37,0.015780337699226765
+Sophia & Ryan,I_concentration,0.012,41.0,0.024390243902439025
+Sophia & Ryan,I_concentration,0.016,33.2,0.03012048192771084
+Sophia & Ryan,I_concentration,0.02,26.38,0.03790750568612585
