@@ -1,5 +1,7 @@
 """Lab 6.1B - Iodine Clock: tidy data + per-group and pooled graphs
-with a linear line of best fit, equation, R and R^2 on every graph."""
+with a linear line of best fit, equation, R and R^2 on every graph,
+plus numbered text-based data output options for specific groups."""
+
 import os
 import matplotlib
 matplotlib.use("Agg")
@@ -8,9 +10,17 @@ import numpy as np
 import pandas as pd
 
 HERE = os.path.dirname(os.path.abspath(__file__))  # folder this script lives in
-OUT = HERE                                        # CSVs saved next to the script
-PLOTS = os.path.join(HERE, "plots_R")               # graphs saved in <script folder>/plots
+OUT = HERE                                         # CSVs saved next to the script
+PLOTS = os.path.join(HERE, "plots_R")              # graphs saved in <script folder>/plots
 os.makedirs(PLOTS, exist_ok=True)
+
+# ==========================================
+# CONFIGURATION OPTION FOR TEXT-BASED DATA
+# ==========================================
+# Set to None to print all groups.
+# Set to an integer (e.g., 1, 2) or string (e.g., "Angus & Darren") to print a specific group.
+SELECTED_GROUP = None 
+
 
 # group -> ([(conc_M, time_s)], [(temp_C, time_s)])
 RAW = {
@@ -59,10 +69,8 @@ PARTS = [
     ("II_temperature", "Temperature (°C)", "Rate vs Temperature", "s"),
 ]
 
-
 def fname(s):
     return s.replace(" & ", "_and_").replace(" ", "_")
-
 
 def best_fit(x, y):
     """Least-squares line y = m*x + b. Returns m, b, r, r2 (None if < 2 points)."""
@@ -72,7 +80,6 @@ def best_fit(x, y):
     m, b = np.polyfit(x, y, 1)
     r = np.corrcoef(x, y)[0, 1]
     return m, b, r, r * r
-
 
 def add_fit(ax, x, y, color="black"):
     """Draw the best-fit line and return a legend handle labelled with equation, R, R^2."""
@@ -85,6 +92,65 @@ def add_fit(ax, x, y, color="black"):
     label = f"y = {m:.3g}x {'+' if b >= 0 else '-'} {abs(b):.3g}\nR = {r:.3f}, R² = {r2:.3f}{note}"
     (line,) = ax.plot(xs, m * xs + b, linestyle="--", color=color, linewidth=1.6, label=label)
     return line
+
+
+# --- CONSOLE DATA & TEXT REPORT ---
+print("==================================================")
+print("LAB 6.1B - IODINE CLOCK: CONSOLE DATA & REGRESSION")
+print("==================================================\n")
+
+# 1. Numbered Text-Based Data Report for Groups
+group_list = list(RAW.keys())
+if SELECTED_GROUP is not None:
+    if isinstance(SELECTED_GROUP, int) and 1 <= SELECTED_GROUP <= len(group_list):
+        selected_pairs = [(SELECTED_GROUP, group_list[SELECTED_GROUP - 1])]
+    elif isinstance(SELECTED_GROUP, str):
+        selected_pairs = [(i+1, g) for i, g in enumerate(group_list) if SELECTED_GROUP.lower() in g.lower()]
+    else:
+        selected_pairs = []
+else:
+    selected_pairs = list(enumerate(group_list, 1))
+
+print("--- NUMBERED GROUP DATA REPORT ---")
+for idx, group in selected_pairs:
+    conc_data, temp_data = RAW[group]
+    print(f"\n[{idx}] Group: {group}")
+    print("-" * 45)
+    print("  Part I: Concentration vs Time")
+    print("    [Concentration (M)]  |  [Time (s)]  |  [Rate (s⁻¹)]")
+    for c, t in conc_data:
+        rate = 1.0 / t
+        print(f"    {c:18.3f}  |  {t:10.2f}  |  {rate:12.5f}")
+    
+    print("\n  Part II: Temperature vs Time")
+    print("    [Temperature (°C)]   |  [Time (s)]  |  [Rate (s⁻¹)]")
+    for temp, t in temp_data:
+        rate = 1.0 / t
+        print(f"    {temp:18.1f}  |  {t:10.2f}  |  {rate:12.5f}")
+print("\n" + "="*50 + "\n")
+
+
+# 2. Regression Statistics Summary
+for part, xl, ttl, mk in PARTS:
+    print(f"--- REGRESSION SUMMARY: {ttl} ({part}) ---")
+    p_df = df[df.part == part]
+    
+    fit_pool = best_fit(p_df.x, p_df.rate_per_s)
+    if fit_pool:
+        mp, bp, rp, r2p = fit_pool
+        print(f"Pooled Regression: y = {mp:.4f}x + {bp:.4f} | R = {rp:.3f} | R² = {r2p:.3f}")
+    
+    print("Per-Group Best-Fit Regression Statistics:")
+    for group in RAW:
+        g_df = p_df[p_df.group == group]
+        if len(g_df) >= 2:
+            fit_g = best_fit(g_df.x, g_df.rate_per_s)
+            if fit_g:
+                mg, bg, rg, r2g = fit_g
+                print(f"  • {group:16s}: y = {mg:8.4f}x + {bg:6.4f} | R = {rg:6.3f} | R² = {r2g:6.3f} (n={len(g_df)})")
+        else:
+            print(f"  • {group:16s}: Insufficient points for regression (n={len(g_df)})")
+    print("\n")
 
 
 # Per-group graphs (two panels)
@@ -126,4 +192,4 @@ for part, xl, ttl, mk in PARTS:
     fig.savefig(os.path.join(PLOTS, f"pooled_{part}.png"), dpi=200)
     plt.close(fig)
 
-print(df.groupby(["part", "group"]).size())
+print("All plots and CSVs generated successfully!")
