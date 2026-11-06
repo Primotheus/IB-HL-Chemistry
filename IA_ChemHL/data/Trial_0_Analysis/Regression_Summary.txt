@@ -1,0 +1,27 @@
+SPECTROPHOTOMETER CALIBRATION ANALYSIS
+=============================================
+
+Measurement wavelength: 628 nm
+Concentration basis: Relative % of Stock A
+
+LINEAR REGRESSION
+-------------------------
+Equation: A = 0.105510C +1.277540
+Slope: 0.10551026
+Intercept: 1.27754037
+R-squared: 0.64742194
+
+INTERPRETATION
+-------------------------
+R-squared describes how closely the experimental data fit the linear regression model.
+It does not independently prove that the calibration is accurate or that the relationship is linear throughout other concentration ranges.
+
+DATA POINTS
+-------------------------
+Standard 1: Concentration = 1%, Absorbance = 1.114255, Predicted = 1.383051, Residual = -0.268796
+Standard 2: Concentration = 2%, Absorbance = 1.246686, Predicted = 1.488561, Residual = -0.241875
+Standard 3: Concentration = 3%, Absorbance = 1.840627, Predicted = 1.594071, Residual = 0.246556
+Standard 4: Concentration = 4%, Absorbance = 1.935314, Predicted = 1.699581, Residual = 0.235732
+Standard 5: Concentration = 5%, Absorbance = 2.031755, Predicted = 1.805092, Residual = 0.226664
+Standard 6: Concentration = 7%, Absorbance = 2.042966, Predicted = 2.016112, Residual = 0.026854
+Standard 7: Concentration = 10%, Absorbance = 2.107508, Predicted = 2.332643, Residual = -0.225135

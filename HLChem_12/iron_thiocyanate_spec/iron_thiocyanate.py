@@ -112,9 +112,9 @@ fig, ax = plt.subplots(figsize=(12, 8))
 group_base_colors = {
     "Gwyn, Ana & Amy": "#1f77b4",          # Blue
     "Kevin J & Khoa": "#2ca02c",           # Green
-    "Kevin L, Leo & Angus": "#9467bd",     # Purple
+    "Kevin L, Leo & Angus": "#e22929",     # Purple
     "Zihan & Darren": "#ff7f0e",           # Orange
-    "Wilson & Ryan (Part 1)": "#8c564b",   # Brown
+    "Wilson & Ryan (Part 1)": "#a72bef",   # Brown
     "Wilson & Ryan (Part 2)": "#e377c2"    # Magenta
 }
 
